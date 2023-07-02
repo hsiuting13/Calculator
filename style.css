@@ -5,5 +5,10 @@
 }
 
 .cal{
-    margin: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(240, 17, 17, 0.76);
+    margin:20%;
 }
