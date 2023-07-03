@@ -1,5 +1,6 @@
-const buttons = document.querySelectorAll(".buttons");
+const operators = document.querySelectorAll(".operator");
 const numbers = document.querySelectorAll(".numbers");
+const result = document.querySelector(".result");
 
 let num;
 let num2;
@@ -24,5 +25,7 @@ function divide(num, num2){
 function operate(op, num, num2){
     return op(num, num2);
 }
+
+
 
 
