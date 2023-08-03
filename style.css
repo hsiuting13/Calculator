@@ -12,24 +12,34 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(240, 17, 17, 0.76);
+    background-color: rgba(106, 118, 126, 0.493);
     width:400px;
     padding:1rem;
     margin: 5rem auto;
 }
-.result{
+.display_result{
     display:flex;
+    flex-direction:column;
     justify-content: flex-end;
     align-items: flex-end;
+    gap:10px;
     border:1px solid black;
     padding:1rem;
     width:360px;
     height:100px;
-    font-size: 2rem;;
+    background-color: rgba(217, 232, 241, 0.699);
 
 }
+.display{
+    font-size:1rem;
+}
+.result{
+    padding-top:-0.5rem;;
+    font-size:2rem;
+}
 button{
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 3px;
     cursor:pointer;
 }
 .reset{
