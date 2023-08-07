@@ -26,18 +26,19 @@ body{
     border:1px solid black;
     padding:1rem;
     width:360px;
-    height:100px;
+    min-height:100px; 
     background-color: rgba(217, 232, 241, 0.699);
+    word-break: break-all;
 
 }
 .display{
-    font-size:1rem;
+    font-size:.8rem;
 }
 .result{
-    padding-top:-0.5rem;;
+    padding-top:-0.5rem;
     font-size:2rem;
 }
-button{
+button, button[disabled]{
     border: 2px solid black;
     border-radius: 3px;
     cursor:pointer;
