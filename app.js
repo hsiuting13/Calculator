@@ -37,6 +37,9 @@ function populateData(e){
     displayValue += e.target.innerText;
     displayValue = parseFloat(displayValue);
     result.innerText = displayValue;
+    // if(total !== 0 && ope !== ""){
+    //     ope = "";
+    // }
     if(["+", "-", "x", "/"].includes(ope)){
         num2 = parseFloat(displayValue)
         if(ope === "+"){
@@ -52,10 +55,8 @@ function populateData(e){
   
 }
 deleNum.addEventListener("click", () =>{
-    if(total !== 0 && num !== 0 && num2 !== 0){
-        return
-    }
-    else if(result.innerText.length > 0){
+    
+  if(result.innerText.length > 0){
         result.innerText = result.innerText.substring(0, result.innerText.length - 1)
         displayValue = result.innerText;
         if(result.innerText === ""){
@@ -88,9 +89,13 @@ numbers.forEach(number => number.addEventListener("click", (e) => {
 }))
 operators.forEach(operator => operator.addEventListener("click", (e) => {
     num = parseFloat(result.innerText);
-    if(num !== 0 && num2 !== 0){
+    
+    if((num2 === 0 || num === 0 && num2 ===0 )&& ope === "/"){
+        alert("You can't divide by ZERO!")
+        return
+    } else if(total !== 0 && num !== 0 && num2 !== 0){
         num = total;
-        result.innerText = total;
+        result.innerText = num;
     }
     displayValue = "";
     ope = e.target.innerText;
@@ -104,6 +109,11 @@ equals.addEventListener("click", () =>{
         return;
     }else{
         num2= parseFloat(displayValue);
+    }
+
+    if(num2 === 0 && ope === "/"){
+        alert("You can't divide by ZERO!")
+        return
     }
    
     if(ope === "+"){
@@ -120,6 +130,8 @@ equals.addEventListener("click", () =>{
     // it shows the calculation process if the user clicks equal
     display.innerText = `${num} ${ope} ${num2} =`;
     result.innerText = total;
+    displayValue = "";
+    total = 0
     num = 0;
     num2 = 0;
 
